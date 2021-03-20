@@ -1,1 +1,3 @@
 Seja bem vindo ao nosso projeto
+
+Search Beers - As melhores cervejas com os melhores preços..
