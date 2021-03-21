@@ -28,7 +28,7 @@ public class Conexao {
     // o driver para conexao com o MySQL e carregado.
     public Conexao() {
         // String de conexao
-        this.url = "jdbc:mysql://localhost:3306/search_beers?useSSL=false&useTimezone=true&serverTimezone=UTC";
+        this.url = "jdbc:mysql://localhost:3306/searchbeers?useSSL=false&useTimezone=true&serverTimezone=UTC";
         this.usuario = "root";   // Informe o usuario e senha
         this.senha = "root123456789"; // do seu banco de dados
 

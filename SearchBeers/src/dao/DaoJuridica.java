@@ -6,29 +6,29 @@ import java.sql.PreparedStatement;
 
 import banco.Conexao;
 
-import modelo.Usuario;
+import modelo.Juridica;
 
-public class DaoUsuario {
+public class DaoJuridica {
 
 	private Connection con;
 	private Conexao conexao;
 
-	public DaoUsuario() {
+	public DaoJuridica() {
 		this.conexao = Conexao.getInstancia();
 		this.con = this.conexao.conecta();
 
 	}
 
 	// Insere um registro no banco de dados
-	public void insert(Usuario usuario) {
-		String sql = "INSERT INTO usuario (login,senha,email,perfil) VALUES (?,?,?,?) ";
+	public void insert(Juridica juridica) {
+		String sql = "INSERT INTO juridica (razao_social,nome_fantasia,cnpj,usuario_id) VALUES (?,?,?,?) ";
 
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setString(1, usuario.getLogin());
-			stmt.setString(2, usuario.getSenha());
-			stmt.setString(3, usuario.getEmail());
-			stmt.setString(4, usuario.getPerfil());
+			stmt.setString(1, juridica.getRazao_social());
+			stmt.setString(2, juridica.getNome_fantasia());
+			stmt.setString(3, juridica.getCnpj());
+			stmt.setInt(4, juridica.getUsuario_id());
 
 			stmt.execute();
 			stmt.close();
@@ -38,4 +38,5 @@ public class DaoUsuario {
 			System.out.println(e.getMessage());
 		}
 	}
+
 }
